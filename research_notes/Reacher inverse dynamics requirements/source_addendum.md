@@ -67,7 +67,7 @@ As a secondary diagnostic, forward dynamics can be extracted from an inverse est
 
 ## 6. Environment status
 
-The existing virtual environment was created with **Python 3.14.4** and currently contains only `pip`. PyPI metadata confirms that `mujoco==4.0.1` publishes Python 3.14 wheels and that `dm-control==1.0.52` requires `mujoco>=4.0.1`. The old exact dependency pins in the DeLaN research repository should therefore be treated as a code/equation reference, not installed wholesale into this environment. A small local implementation using a current autodiff framework is safer and easier to audit for two degrees of freedom.
+The initial virtual environment was created with **Python 3.14.4**. PyPI metadata confirms that `mujoco==4.0.1` publishes Python 3.14 wheels, but implementation testing found that `labmaze==1.0.6`—a mandatory `dm_control` dependency—does not. It falls back to a Bazel source build. The canonical implementation therefore uses **Python 3.12** in `.venv`, where the complete binary dependency set installs reproducibly. The old exact dependency pins in the DeLaN research repository remain code/equation references rather than runtime requirements.
 
 ## 7. Primary-source map
 

@@ -1,0 +1,66 @@
+{
+  "runtime": {
+    "action_maximum": [
+      1.0,
+      1.0
+    ],
+    "action_minimum": [
+      -1.0,
+      -1.0
+    ],
+    "action_shape": [
+      2
+    ],
+    "actuator_gears": [
+      0.05,
+      0.05
+    ],
+    "control_timestep": 0.02,
+    "dm_control_version": "1.0.52",
+    "has_legacy_qM": false,
+    "has_sparse_M": true,
+    "integrator_id": 0,
+    "integrator_name": "mjINT_EULER",
+    "joint_limited": [
+      false,
+      true
+    ],
+    "joint_names": [
+      "shoulder",
+      "wrist"
+    ],
+    "joint_ranges": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        -2.792526803190927,
+        2.792526803190927
+      ]
+    ],
+    "mujoco_library_version": "4.0.1",
+    "mujoco_python_version": "4.0.1",
+    "na": 0,
+    "nq": 2,
+    "nu": 2,
+    "nv": 2,
+    "observation_shapes": {
+      "position": [
+        2
+      ],
+      "to_target": [
+        2
+      ],
+      "velocity": [
+        2
+      ]
+    },
+    "physics_timestep": 0.02,
+    "platform": "linux-x86_64",
+    "python_version": "3.12.3",
+    "xml_sha256": "849e1e3dd8e79b8f5796bd6e32b0d7a51b916355584402d8f803d74ad35ad193",
+    "xml_type": "bytes"
+  },
+  "status": "passed"
+}

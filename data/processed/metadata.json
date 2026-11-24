@@ -1,0 +1,298 @@
+{
+  "array_schema": {
+    "feasible": {
+      "dtype": "bool",
+      "shape": [
+        40000
+      ]
+    },
+    "mass_matrix": {
+      "dtype": "float64",
+      "shape": [
+        40000,
+        2,
+        2
+      ]
+    },
+    "nefc": {
+      "dtype": "int32",
+      "shape": [
+        40000
+      ]
+    },
+    "q": {
+      "dtype": "float64",
+      "shape": [
+        40000,
+        2
+      ]
+    },
+    "q_ddot": {
+      "dtype": "float64",
+      "shape": [
+        40000,
+        2
+      ]
+    },
+    "q_dot": {
+      "dtype": "float64",
+      "shape": [
+        40000,
+        2
+      ]
+    },
+    "qfrc_bias": {
+      "dtype": "float64",
+      "shape": [
+        40000,
+        2
+      ]
+    },
+    "qfrc_constraint": {
+      "dtype": "float64",
+      "shape": [
+        40000,
+        2
+      ]
+    },
+    "qfrc_passive": {
+      "dtype": "float64",
+      "shape": [
+        40000,
+        2
+      ]
+    },
+    "regime": {
+      "dtype": "<U24",
+      "shape": [
+        40000
+      ]
+    },
+    "sample_index": {
+      "dtype": "int32",
+      "shape": [
+        40000
+      ]
+    },
+    "split": {
+      "dtype": "<U16",
+      "shape": [
+        40000
+      ]
+    },
+    "tau_joint": {
+      "dtype": "float64",
+      "shape": [
+        40000,
+        2
+      ]
+    },
+    "time": {
+      "dtype": "float64",
+      "shape": [
+        40000
+      ]
+    },
+    "trajectory_id": {
+      "dtype": "<U32",
+      "shape": [
+        40000
+      ]
+    },
+    "trajectory_seed": {
+      "dtype": "int64",
+      "shape": [
+        40000
+      ]
+    }
+  },
+  "config": {
+    "dataset": {
+      "budget_seed": 7319,
+      "constraint_tolerance": 1e-12,
+      "duration_seconds": 5.0,
+      "fourier_components": 3,
+      "frequency_max_hz": 0.65,
+      "frequency_min_hz": 0.1,
+      "id_test_trajectories": 20,
+      "max_generation_attempts": 500,
+      "sample_timestep": 0.02,
+      "shoulder_ood_trajectories": 10,
+      "torque_headroom": 0.045,
+      "train_trajectories": 100,
+      "trajectory_seed": 20261124,
+      "validation_trajectories": 20,
+      "wrist_ood_trajectories": 10
+    },
+    "id_envelope": {
+      "max_abs_acceleration": [
+        8.0,
+        8.0
+      ],
+      "max_abs_velocity": [
+        2.0,
+        2.0
+      ],
+      "outside_abs_min": null,
+      "outside_joint": null,
+      "q_high": [
+        1.5,
+        1.2
+      ],
+      "q_low": [
+        -1.5,
+        -1.2
+      ]
+    },
+    "runtime": {
+      "control_timestep": 0.02,
+      "dm_control_version": "1.0.52",
+      "domain": "reacher",
+      "mujoco_version": "4.0.1",
+      "physics_timestep": 0.02,
+      "seed": 0,
+      "task": "easy",
+      "torque_per_ctrl": 0.05,
+      "xml_sha256": "849e1e3dd8e79b8f5796bd6e32b0d7a51b916355584402d8f803d74ad35ad193"
+    },
+    "shoulder_ood_envelope": {
+      "max_abs_acceleration": [
+        8.0,
+        8.0
+      ],
+      "max_abs_velocity": [
+        2.0,
+        2.0
+      ],
+      "outside_abs_min": 1.55,
+      "outside_joint": 0,
+      "q_high": [
+        2.75,
+        1.2
+      ],
+      "q_low": [
+        -2.75,
+        -1.2
+      ]
+    },
+    "source_path": "/home/aamanprime/Documents/iRob/Project/configs/phase1.toml",
+    "validation": {
+      "absolute_tolerance": 1e-12,
+      "dataset_recheck_samples": 256,
+      "random_state_samples": 512,
+      "relative_tolerance": 1e-10,
+      "seed": 48017
+    },
+    "wrist_ood_envelope": {
+      "max_abs_acceleration": [
+        8.0,
+        8.0
+      ],
+      "max_abs_velocity": [
+        2.0,
+        2.0
+      ],
+      "outside_abs_min": 1.5,
+      "outside_joint": 1,
+      "q_high": [
+        1.5,
+        2.3
+      ],
+      "q_low": [
+        -1.5,
+        -2.3
+      ]
+    }
+  },
+  "counts": {
+    "regimes": {
+      "id": 140,
+      "shoulder_ood": 10,
+      "wrist_ood": 10
+    },
+    "samples": 40000,
+    "samples_per_trajectory": 250,
+    "splits": {
+      "id_test": 20,
+      "ood_test": 20,
+      "train": 100,
+      "validation": 20
+    },
+    "trajectories": 160
+  },
+  "created_utc": "2026-11-24T17:30:10.139411+00:00",
+  "dataset_content_sha256": "f0cdd9a227a9a643b15d44dad61e680d5faf664a0de2c8fc68506be593e78299",
+  "dataset_file": "reacher_inverse_dynamics.npz",
+  "quality": {
+    "all_rows_feasible": true,
+    "max_abs_constraint_force": 0.0,
+    "max_abs_torque": [
+      0.02425537925225399,
+      0.020491439580336442
+    ],
+    "max_nefc": 0
+  },
+  "runtime": {
+    "action_maximum": [
+      1.0,
+      1.0
+    ],
+    "action_minimum": [
+      -1.0,
+      -1.0
+    ],
+    "action_shape": [
+      2
+    ],
+    "actuator_gears": [
+      0.05,
+      0.05
+    ],
+    "control_timestep": 0.02,
+    "dm_control_version": "1.0.52",
+    "has_legacy_qM": false,
+    "has_sparse_M": true,
+    "integrator_id": 0,
+    "integrator_name": "mjINT_EULER",
+    "joint_limited": [
+      false,
+      true
+    ],
+    "joint_names": [
+      "shoulder",
+      "wrist"
+    ],
+    "joint_ranges": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        -2.792526803190927,
+        2.792526803190927
+      ]
+    ],
+    "mujoco_library_version": "4.0.1",
+    "mujoco_python_version": "4.0.1",
+    "na": 0,
+    "nq": 2,
+    "nu": 2,
+    "nv": 2,
+    "observation_shapes": {
+      "position": [
+        2
+      ],
+      "to_target": [
+        2
+      ],
+      "velocity": [
+        2
+      ]
+    },
+    "physics_timestep": 0.02,
+    "platform": "linux-x86_64",
+    "python_version": "3.12.3",
+    "xml_sha256": "849e1e3dd8e79b8f5796bd6e32b0d7a51b916355584402d8f803d74ad35ad193",
+    "xml_type": "bytes"
+  }
+}

@@ -1,0 +1,13 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+presentation/node_modules/
+presentation/rendered/
+
+# Reproducible generated artifacts. Keep manifests/configuration in version control.
+data/processed/*.npz

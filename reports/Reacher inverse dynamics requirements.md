@@ -51,7 +51,7 @@ Use and record:
 - physics and control timesteps;
 - generated-data configuration and code commit/hash.
 
-The current workspace virtual environment uses Python 3.14.4. MuJoCo 4.0.1 publishes Python 3.14 wheels. The old dependency pins in the public DeLaN repository should not be copied wholesale; its equations and tests are useful, but a small local implementation is safer for this two-DoF project.
+The initial workspace virtual environment used Python 3.14.4. MuJoCo 4.0.1 publishes Python 3.14 wheels, but `labmaze==1.0.6`—a required `dm_control` dependency—does not. The implemented canonical environment therefore uses Python 3.12 in `.venv`, with complete locks in `uv.lock` and `requirements-lock.txt`. The old dependency pins in the public DeLaN repository should not be copied wholesale; its equations and tests are useful, but a small local implementation is safer for this two-DoF project.
 
 ### 2.2 State, action, and timing
 

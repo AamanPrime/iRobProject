@@ -280,8 +280,9 @@ This is a hypothesis, not a guaranteed result. A carefully measured negative res
 - [x] `dm_control` and MuJoCo dynamics research
 - [x] Lagrangian-network and inverse-dynamics literature review
 - [x] Experiment and evaluation protocol
-- [ ] Environment setup and runtime model verification
-- [ ] Dataset implementation
+- [x] Environment setup and runtime model verification
+- [x] Analytical and MuJoCo dynamics implementation
+- [x] Deterministic dataset implementation and validation
 - [ ] Model implementation
 - [ ] Training and evaluation
 - [ ] Closed-loop controller and demo
@@ -295,5 +296,27 @@ The complete technical specification is available in:
 - [`research_notes/Physics informed reacher inverse dynamics/dm_control_and_mujoco.md`](research_notes/Physics%20informed%20reacher%20inverse%20dynamics/dm_control_and_mujoco.md)
 - [`research_notes/Physics informed reacher inverse dynamics/literature_and_code.md`](research_notes/Physics%20informed%20reacher%20inverse%20dynamics/literature_and_code.md)
 - [`research_notes/Reacher inverse dynamics requirements/source_addendum.md`](research_notes/Reacher%20inverse%20dynamics%20requirements/source_addendum.md)
+- [`docs/phase1_implementation.md`](docs/phase1_implementation.md)
+- [`docs/phase1_viva_handbook.md`](docs/phase1_viva_handbook.md)
+- [`data/processed/DATA_CARD.md`](data/processed/DATA_CARD.md)
+- [`presentation/output/Reacher_Inverse_Dynamics_Project_Presentation.pptx`](presentation/output/Reacher_Inverse_Dynamics_Project_Presentation.pptx)
 
-Installation and execution commands will be added after the implementation environment and command-line interfaces are finalized.
+## Phase 1 quick start
+
+The canonical environment uses Python 3.12 and `uv`:
+
+```bash
+uv sync --frozen --extra dev
+source .venv/bin/activate
+export MUJOCO_GL=egl
+export LC_ALL=C.UTF-8
+```
+
+Run the complete physics and dataset phase:
+
+```bash
+reacher-phase1 all --force
+pytest
+```
+
+The generated dataset and manifests are written to `data/processed/`. Runtime and acceptance reports are written to `artifacts/`.

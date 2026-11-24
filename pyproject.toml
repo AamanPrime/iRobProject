@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reacher-inverse-dynamics"
+version = "0.1.0"
+description = "Physics-informed inverse dynamics for dm_control reacher tracking"
+readme = "ReadMe.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "dm-control==1.0.52",
+  "mujoco==4.0.1",
+  "numpy==2.5.5",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.2.0",
+]
+
+[project.scripts]
+reacher-phase1 = "reacher_id.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+  "integration: tests requiring the installed MuJoCo/dm_control runtime",
+]

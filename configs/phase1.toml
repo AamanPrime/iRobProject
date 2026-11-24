@@ -1,0 +1,56 @@
+[runtime]
+domain = "reacher"
+task = "easy"
+seed = 0
+dm_control_version = "1.0.52"
+mujoco_version = "4.0.1"
+xml_sha256 = "849e1e3dd8e79b8f5796bd6e32b0d7a51b916355584402d8f803d74ad35ad193"
+physics_timestep = 0.02
+control_timestep = 0.02
+torque_per_ctrl = 0.05
+
+[dataset]
+duration_seconds = 5.0
+sample_timestep = 0.02
+train_trajectories = 100
+validation_trajectories = 20
+id_test_trajectories = 20
+shoulder_ood_trajectories = 10
+wrist_ood_trajectories = 10
+trajectory_seed = 20261124
+budget_seed = 7319
+torque_headroom = 0.045
+constraint_tolerance = 1e-12
+max_generation_attempts = 500
+fourier_components = 3
+frequency_min_hz = 0.10
+frequency_max_hz = 0.65
+
+[envelope.id]
+q_low = [-1.5, -1.2]
+q_high = [1.5, 1.2]
+max_abs_velocity = [2.0, 2.0]
+max_abs_acceleration = [8.0, 8.0]
+
+[envelope.shoulder_ood]
+q_low = [-2.75, -1.2]
+q_high = [2.75, 1.2]
+max_abs_velocity = [2.0, 2.0]
+max_abs_acceleration = [8.0, 8.0]
+outside_joint = 0
+outside_abs_min = 1.55
+
+[envelope.wrist_ood]
+q_low = [-1.5, -2.3]
+q_high = [1.5, 2.3]
+max_abs_velocity = [2.0, 2.0]
+max_abs_acceleration = [8.0, 8.0]
+outside_joint = 1
+outside_abs_min = 1.5
+
+[validation]
+random_state_samples = 512
+dataset_recheck_samples = 256
+absolute_tolerance = 1e-12
+relative_tolerance = 1e-10
+seed = 48017
